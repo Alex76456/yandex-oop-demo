@@ -13,18 +13,10 @@ class TodoList {
     this._items.forEach(item => this._addItem(item));
   }
 
-  // 3
   _addItem = (text) => {
-    this._createTodoItem(
-      text,
-      // 3
-      this._addItem,
-      // 4
-      this._editItem,
-    ).render(this._view);
+    this._createTodoItem(text, this._addItem, this._editItem).render(this._view);
   }
 
-  // 4
   _editItem = () => {
     this._todoForm.onEdit();
   }

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Todo list</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;900&display=swap" rel="stylesheet">
+  <link href="styles/index.css" rel="stylesheet">
+</head>
+
+<body class="theme theme_dark">
+
+  <main class="content">
+    <header class="header content_header">
+      <h1 class="header__title header__title_theme_dark">
+        Todo List
+      </h1>
+    </header>
+  </main>
+
+  <template class="todo-list-template">
+    <section class="todo-list content_todo-list">
+    </section>
+  </template>
+
+  <template class="todo-form-template">
+    <form class="add-todo-form content_add-todo-form">
+      <input class="add-todo-form__field add-todo-form__field_input" placeholder="Todo name" name="name"
+        autocomplete="off" />
+      <button class="add-todo-form__field add-todo-form__field_submit">Добавить</button>
+    </form>
+  </template>
+
+  <template class="todo-template">
+    <article class="todo-list__item todo">
+      <h5 class="todo__title todo__title_theme_dark"></h5>
+
+      <div class="todo__controls">
+        <button type="button" class="todo__control control control_edit" />
+        <button type="button" class="todo__control control control_duplicate" />
+        <button type="button" class="todo__control control control_remove" />
+      </div>
+    </article>
+  </template>
+
+  <script src="./scripts/TodoList.js"></script>
+  <script src="./scripts/TodoForm.js"></script>
+  <script src="./scripts/TodoItem.js"></script>
+  <script src="./scripts/index.js"></script>
+</body>
+
+</html>

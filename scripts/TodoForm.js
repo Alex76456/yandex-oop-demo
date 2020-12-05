@@ -7,10 +7,12 @@ class TodoForm {
     this.isEditing = false;
   }
 
+  // Находим и возвращаем ссылку на нашу 'задачу', которую сейчас редактируем
   _getEditableTodo() {
     return document.querySelector(".is-edit").children[0];
   }
 
+  // Получаем ссылку на инпут
   _getInput() {
     return this._view.querySelector('.add-todo-form__field_input');
   }
@@ -22,17 +24,24 @@ class TodoForm {
     input.value = '';
   }
 
+  // Получаем редактируемую 'задачу'
+  // Записываем в не значение из инпута
+  // Убираем флаг редактирования
   _editItem = () => {
     const editableTodo = this._getEditableTodo();
     editableTodo.textContent = this._getInput().value;
     this.isEditing = false;
   }
 
+  // Получаем редактируемый элемент
+  // Получаем инпут
+  // Записываем значение редактируемой 'задачи' в инпут
+  // Выставляем флаг редактирования
   onEdit = () => {
     const editableTodo = this._getEditableTodo();
     const input = this._getInput();
-    this.isEditing = true;
     input.value = editableTodo.textContent;
+    this.isEditing = true;
   }
 
   render = (container) => {

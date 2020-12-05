@@ -8,15 +8,20 @@ class TodoItem {
     this._onEdit = onEdit;
   }
 
+  // Метод для удаления элемента
   _deleteClickHandler = () => {
     this._view.remove();
   }
 
+  // Метод копирования элемента
   _duplicateClickHandler = () => {
     const text = this._view.querySelector('.todo__title').textContent;
     this._addItem(text);
   }
 
+  // Находим редактируемую ранее 'задачу' и удаляем у нее класс, сигнализирующий о том, что мы ее редактировали
+  // Добавляем класс редактирования для текущей 'задачи'
+  // Вызываем метод редактирования 'задачи', который передается из класса TodoList
   _editClickHandler = () => {
     const editable = document.querySelector(".is-edit");
     if (editable) {
@@ -26,6 +31,7 @@ class TodoItem {
     this._onEdit();
   }
 
+  // Выставляем слушатели для 'задачи'
   _setEventListeners = () => {
     this._view.querySelector('.control_remove').addEventListener('click', this._deleteClickHandler);
     this._view.querySelector('.control_duplicate').addEventListener('click', this._duplicateClickHandler);

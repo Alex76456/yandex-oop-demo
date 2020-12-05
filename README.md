@@ -1,2 +1,2 @@
-# yandex-templates
-Repository for demonstrating js-templates at the webinar
+# yandex-oop-demo
+Repository for demonstrating OOP in js at the webinar
